@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/fd2358422c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/main2.css">
+    <title>Yelp Clone</title>
+</head>
+
+<body>
+    <div class="main-container-1">
+        <header>
+            <div class="header-contents-container">
+                <div class="header-contents-container-top">
+                    <div class="logo-container-1">
+                        <div class="logo-wrapper-1">
+                            <a href="./main2.html" class="img-link-1"><img src="https://companieslogo.com/img/orig/YELP_BIG.D-5a67c069.png?t=1671247816" class="img-1"></a>
+                        </div>
+                    </div>
+                    
+                    <div class="search-bar-container-1">
+                        <div class="search-bar-wrapper-1">
+                            <input type="text" class="search-input-1" placeholder="tacos, cheap dinner, Max's" id="searchQuery" name="searchQuery">
+                            <div class="divider"></div>
+                            <input type="text" class="search-input-1" placeholder="New York, NY" id="searchLocation" name="searchLocation">
+                            <button class="search-btn-1" onclick="search()"><i class="fas fa-search fa-xl" style="color: #ffffff;"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons-container-1">
+                        
+                        <div class="right-header-text-link-container">
+                            <div class="right-header-text-link-wrapper-1">
+                                <a href="" class="text-link-1" id="yelp-for-business">Yelp For Business</a>
+                            </div>
+                            <div class="right-header-text-link-wrapper-1">
+                                <a href="" class="text-link-1" id="write-a-review">Write a Review</a>
+                            </div>
+                        </div>
+                        
+                        <div class="right-header-button-container">
+                            <div class="right-header-button-wrapper-1">
+                                <button class="auth-btn-1" id="login"   onclick="login()">Log In</button>
+                            </div>
+                            <div class="right-header-button-wrapper-1">
+                                <button class="auth-btn-1" id="signup" onclick="signup()">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="header-contents-container-bottom">
+                    <nav class="header-nav-bar">
+                        <ul class="nav-menu">
+                          <li class="nav-item">
+                            <a href="#">Restaurants<i class="fas fa-chevron-down"></i></a>
+                            
+                            <ul class="dropdown-menu">
+                              <li><a href="#"><i class="fa-solid fa-motorcycle fa-lg" style="color: #383838;"></i>Delivery</a></li>
+                              <li><a href="#"><i class="fa-solid fa-calendar-day fa-lg" style="color: #383838;"></i>Reservations</a></li>
+                              <li><a href="#"><i class="fa-solid fa-burger fa-lg" style="color: #383838;"></i>Burgers</a></li>
+                              <li><a href="#"><i class="fa-solid fa-fish fa-lg" style="color: #383838;"></i>Japanese</a></li>
+                              <li><a href="#"><i class="fa-solid fa-bowl-rice fa-lg" style="color: #383838;"></i>Chinese</a></li>
+                              <li><a href="#"><i class="fa-solid fa-pepper-hot fa-lg" style="color: #383838;"></i>Mexican</a></li>
+                              <li><a href="#"><i class="fa-solid fa-pizza-slice fa-lg" style="color: #383838;"></i>Italian</a></li>
+                              <li><a href="#"><i class="fa-solid fa-shrimp fa-lg" style="color: #383838;"></i>Thai</a></li>
+                            </ul>
+                          </li>
+                          <li class="nav-item">
+                            <a href="#">Home Services<i class="fas fa-chevron-down"></i></a>
+                            
+                            <ul class="dropdown-menu">
+                              <li><a href="#"><i class="fa-solid fa-hammer fa-lg" style="color: #383838;"></i>Contractors</a></li>
+                              <li><a href="#"><i class="fa-solid fa-seedling fa-lg" style="color: #383838;"></i>Landscaping</a></li>
+                              <li><a href="#"><i class="fa-solid fa-plug fa-lg" style="color: #383838;"></i>Electricians</a></li>
+                              <li><a href="#"><i class="fa-solid fa-unlock fa-lg" style="color: #383838;"></i>Locksmiths</a></li>
+                              <li><a href="#"><i class="fa-solid fa-broom fa-lg" style="color: #383838;"></i>Home Cleaners</a></li>
+                              <li><a href="#"><i class="fa-solid fa-truck-fast fa-lg" style="color: #383838;"></i>Movers</a></li>
+                              <li><a href="#"><i class="fa-solid fa-fan fa-lg" style="color: #383838;"></i>HVAC</a></li>
+                              <li><a href="#"><i class="fa-solid fa-toilet fa-lg" style="color: #383838;"></i>Plumbers</a></li>
+                            </ul>
+                          </li>
+                          <li class="nav-item">
+                            <a href="#">Auto Services<i class="fas fa-chevron-down"></i></a>
+                            
+                            <ul class="dropdown-menu">
+                              <li><a href="#"><i class="fa-solid fa-wrench fa-lg" style="color: #383838;"></i>Auto Repair</a></li>
+                              <li><a href="#"><i class="fa-solid fa-key fa-lg" style="color: #383838;"></i>Car Dealers</a></li>                              
+                              <li><a href="#"><i class="fa-solid fa-spray-can-sparkles fa-lg" style="color: #383838;"></i>Auto Detailing</a></li>                             
+                              <li><a href="#"><i class="fa-solid fa-oil-can fa-lg" style="color: #383838;"></i>Oil Change</a></li>
+                              <li><a href="#"><i class="fa-solid fa-screwdriver fa-lg" style="color: #383838;"></i>Body Shops</a></li>                       
+                              <li><a href="#"><i class="fa-solid fa-square-parking fa-lg" style="color: #383838;"></i>Parking</a></li>
+                              <li><a href="#"><i class="fa-solid fa-hand-sparkles fa-lg" style="color: #383838;"></i>Car Wash</a></li> 
+                              <li><a href="#"><i class="fa-solid fa-truck-ramp-box fa-lg" style="color: #383838;"></i>Towing</a></li>
+                            </ul>
+                          </li>
+                          <li class="nav-item">
+                            <a href="#">More<i class="fas fa-chevron-down"></i></a>
+                            
+                            <ul class="dropdown-menu">
+                              <li><a href="#"><i class="fa-solid fa-shirt fa-lg" style="color: #383838;"></i>Dry Cleaning</a></li>
+                              <li><a href="#"><i class="fa-solid fa-chair fa-lg" style="color:#383838"></i>Hair Salons</a></li>
+                              <li><a href="#"><i class="fa-solid fa-mobile-screen fa-lg" style="color: #383838;"></i>Phone Repair</a></li>
+                              <li><a href="#"><i class="fa-solid fa-dumbbell fa-lg" style="color: #383838"></i>Gyms</a></li>
+                              <li><a href="#"><i class="fa-solid fa-beer-mug-empty fa-lg" style="color:#383838"></i>Bars</a></li>
+                              <li><a href="#"><i class="fa-solid fa-spa fa-lg" style="color: #383838;"></i>Massage</a></li>
+                              <li><a href="#"><i class="fa-solid fa-martini-glass-citrus fa-lg" style="color: #383838;"></i>Nightlife</a></li>
+                              <li><a href="#"><i class="fa-solid fa-cart-shopping fa-lg" style="color: #383838;"></i>Shopping</a></li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </ul>
+                    </nav>
+                </div>
+
+                <div class="header-contents-container-main">
+                    <div class="main-header-contents">
+                        
+                        <div class="loading-container">
+                            <div class="loading-bar">
+                                
+                                    <div class="loading-part"></div>
+                                    <div class="loading-part"></div>
+                                    <div class="loading-part"></div>
+                                
+                            </div>
+                        </div>
+                        
+                        </div>
+                        <div class="main-header-text-container">
+                            <h1 class="main-header-title">Find That Perfect Date Night Spot</h1>
+                            <button class="main-header-button"><i class="fas fa-search fa-xl" style="color: #ffffff;"></i>Restaurants</button>
+                        </div>
+                       
+                    </div>
+                    <div class="main-header-contents-2">
+                        <div class="main-header-contents-2-container">
+                            <div class="card-contents-container">
+                                <a href="https://www.opussteakhouse.com/" class="picture-title-2">Opus Steakhouse</a>
+                                <div class="card-dropdown-content">
+                                    <div class="dropdown-wrapper">
+                                        <a href="https://www.opussteakhouse.com/"><img class="img-2" src="https://cdn0.weddingwire.com/vendor/326530/3_2/960/jpg/neo-3978ed_51_1035623-161868590832335.jpeg"></a>
+                                        <a href="https://www.opussteakhouse.com/"><h2 class="card-link-title">Opus Steakhouse</h2></a>
+            
+                                        <div class="rating">
+                                            <input type="radio" name="star" id="star5" value="5"><label for="star5" title="5 stars"></label>
+                                            <input type="radio" name="star" id="star4" value="4"><label for="star4" title="4 stars"></label>
+                                            <input type="radio" name="star" id="star3" value="3"><label for="star3" title="3 stars"></label>
+                                            <input type="radio" name="star" id="star2" value="2"><label for="star2" title="2 stars"></label>
+                                            <input type="radio" name="star" id="star1" value="1"><label for="star1" title="1 star"></label>
+                                            <span class="review-count">822</span>
+                                        </div>
+                                        
+                                        <div class="bottom-card-links">
+                                            <a href="https://www.opussteakhouse.com/">Reservations,</a>
+                                            <a href="https://www.opussteakhouse.com/weddings/">Weddings,</a>
+                                            <a href="https://www.opussteakhouse.com/overview/">Private Events</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p class="author-title-2">Photo By Nicholas Buscemi</p>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="main-container-2">
+        <main>
+            <div class="main-section-content-header-container">
+                <h2>Recent Activity</h2>
+            </div>
+            <div class="main-section-content-container">
+                <div class="card-container">
+                    <card class="card">
+                        <div class="card-header">
+                            <img class="card-profile-picture" src="https://us.123rf.com/450wm/fizkes/fizkes2011/fizkes201102042/159430998-headshot-portrait-profile-picture-of-pretty-smiling-young-woman-posing-indoors-looking-at-camera.jpg?ver=6">
+                            <div class="card-header-text">
+                                <a href="#" class="card-profile-link">Nicole C.</a>
+                                <p>Wrote a review</p>
+                            </div>
+                        </div>
+                        <div class="card-img-container">
+                            <img class="card-img" src="https://s3-media0.fl.yelpcdn.com/bphoto/QrmYM95FN53XrBrgdDoBJg/o.jpg">
+                        </div>
+
+                    </card>
+                </div>
+                <div class="card-container">
+                    <card class="card">
+                       
+                        
+                    </card>
+                </div>
+                <div class="card-container">
+                    <card class="card">card</card>
+                </div>
+                <div class="card-container">
+                    <card class="card">card</card>
+                </div>
+                <div class="card-container">
+                    <card class="card">card</card>
+                </div>
+                <div class="card-container">
+                    <card class="card">card</card>
+                </div>
+                <div class="card-container">
+                    <card class="card">card</card>
+                </div>
+                <div class="card-container">
+                    <card class="card">card</card>
+                </div>
+                <div class="card-container">
+                    <card class="card">card</card>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="main-container-3">
+        <div class="sub-section">
+
+        </div>
+    </div>
+
+    <div class="main-container-4">
+        <footer>
+
+        </footer>
+    </div>
+</body>
