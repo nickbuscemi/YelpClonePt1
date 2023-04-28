@@ -18,8 +18,20 @@ html, body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    animation: changeBackground 18s infinite;
 }
 
+@keyframes changeBackground {
+    0%, 100% {
+        background-image: url('https://images.getbento.com/accounts/a2a35526942948a41d2bce6f10e4f7af/media/images/36754OneNorth-1.jpeg?w=1200&fit=crop&auto=compress,format&h=600');
+    }
+    33% {
+        background-image: url('https://resizer.otstatic.com/v2/photos/wide-huge/2/50449096.jpg');
+    }
+    66% {
+        background-image: url('https://assets.simpleviewinc.com/simpleview/image/upload/crm/longisland/75593799_2446107092329343_6234384779513430016_o_911E1F65-820B-45A8-BDD44EAB2EB624B3_1ac57ac1-af78-40f8-8963b725c2cc795a.jpg');
+    }
+}
 /* header stuff */
 
 header {
@@ -362,9 +374,10 @@ header {
     background-color: transparent;
     border-radius: 10px;
     position: relative;
+    z-index: 1;
 }
 
-.loading-part {
+.loading-button {
     display: flex;
     position: relative;
     flex-direction: column;
@@ -373,22 +386,46 @@ header {
     width: 100%;
     height: 90px;
     background-color: #ccc;
-    opacity: .6;
+    opacity: .8;
     border-radius: 10px;
-    
+    z-index: 2;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    transition: opacity .8s;
 }
-.loading-bar::before {
+
+.loading-button:hover {
+    opacity: 1;
+}
+.loading-button::before {
     content: "";
     position: absolute;
     background-color: #fff;
-    opacity: 100;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 10px;
     height: 0%;
     border-radius: 10px;
-    animation: moving 18s ease-in-out infinite;
+    animation: moving 12s linear infinite;
+    animation-delay: 3s;
 }
+
+
+
+/*@keyframes moving {
+    0%, 33%, 100% {
+        height: 0;
+        top: 0;
+        bottom: unset;
+    }
+    16.5%, 49.5%, 82.5% {
+        height: 100%;
+    }
+}*/
 
 @keyframes moving {
     50% {
@@ -551,11 +588,13 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
-    grid-gap: 40px;
+    grid-gap: 35px;
 }
 .card-container {
+    display: flex;
+    flex-direction: column;
     border: 1px solid #d6d6d6;
-    height: 359.98px;
+    height: 376px;
     width: 374px;
     padding: 16px 24px;
     position: relative;
@@ -594,20 +633,79 @@ main {
     text-decoration: underline;
 }
 
-.card-img-container {
-    position: absolute;
-    right: 0%;
-    top: 22%;
+.card-img-container-type-1 {
+    position: relative;
     height: 89px;
     overflow: hidden;
     z-index: 40;
+    flex: 1;
+    margin: 16px -24px;
 }
 .card-img {
     width: 100%;
-    height: auto;
-    position: relative;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0px;
+    vertical-align: middle;
 }
 
+.reviewed-name-link, .continue-reading {
+    text-decoration: none;
+    color: #027a97;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.reviewed-name-link:hover, .continue-reading:hover {
+    text-decoration: underline;
+}
+
+.star-review-icon-container {
+    padding-top: 8px;
+    padding-bottom: 12px;
+}
+
+.card-review-container {
+    height: 60px;
+    position: relative;
+    margin: -8px;
+    padding: 0px 8px 12px;
+    border-bottom: 1px solid #d6d6d6;;
+}
+
+.card-review {
+    height: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+}
+
+.bottom-card-icons-container {
+    margin-top: 8px;
+    position: relative;
+    width: 56%
+}
+.bottom-card-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 29px;
+}
+
+.card-icon-container {
+    color: #fff;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 7s,;
+}
+.card-icon-container:hover {
+    background-color: rgba(206, 207, 207, .35);
+}
 
 /* media queries */
 @media (min-width: 768px) {
